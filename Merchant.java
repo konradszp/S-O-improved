@@ -5,7 +5,7 @@ public class Merchant extends GamePanel{
     int merchantX;
     int merchantY;
     int merchantGold;
-    private Random random;
+    private Random random = new Random();
 
     Merchant(){
         merchantX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;

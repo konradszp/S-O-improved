@@ -5,7 +5,7 @@ public class Enemy extends GamePanel{
     int enemyGold;
     int enemyX;
     int enemyY;
-    private Random random;
+    private Random random = new Random();
 
     Enemy(){
         enemyX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;

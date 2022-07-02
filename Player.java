@@ -7,7 +7,7 @@ public class Player extends GamePanel{
     int playerHP;
     int playerAD;
     int playerGold;
-    private Random random;
+    private Random random = new Random();
 
 
     Player(){
