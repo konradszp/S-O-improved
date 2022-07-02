@@ -9,10 +9,6 @@ public class GamePanel extends JPanel implements ActionListener {
 	static final int SCREEN_HEIGHT = 750;
 	static final int UNIT_SIZE = 50;
 	static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
-    //private Random random;
-
-    //Player p1;
-    //Merchant m1;
     char direction = 0;
 
     ArrayList<Enemy> enemies = new ArrayList<Enemy>();
