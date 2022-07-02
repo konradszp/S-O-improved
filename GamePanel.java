@@ -9,10 +9,10 @@ public class GamePanel extends JPanel implements ActionListener {
 	static final int SCREEN_HEIGHT = 750;
 	static final int UNIT_SIZE = 50;
 	static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
-    private Random random;
+    //private Random random;
 
-    Player p1;
-    Merchant m1;
+    //Player p1;
+    //Merchant m1;
     char direction = 0;
 
     ArrayList<Enemy> enemies = new ArrayList<Enemy>();
@@ -20,28 +20,39 @@ public class GamePanel extends JPanel implements ActionListener {
     boolean fightState = true;
     String s;
     boolean chance;
-
+    Merchant m1;
+    Player p1;
 
     GamePanel(){
-        random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH,SCREEN_HEIGHT));
 		this.setBackground(Color.black);
 		this.setFocusable(true);
 		this.addKeyListener(new MyKeyAdapter());
 		startGame();
+
     }
 
     public void startGame(){
-        p1 = new Player();
-        m1 = new Merchant();
+        newPlayer();
+        newMerchant();
         newEnemies();
+    }
 
+    public void newPlayer(){
+        p1 = new Player();
+        repaint();
+    }
+
+    public void newMerchant(){
+        m1 = new Merchant();
+        repaint();
     }
 
     public void newEnemies(){
         for(int x=0;x<5;x++){
             enemies.add(new Enemy());
         }
+        repaint();
     }
 
     public void paintComponent(Graphics g) {
@@ -250,11 +261,11 @@ public class GamePanel extends JPanel implements ActionListener {
 					}
 				}
 				if(((p1.getPlayerX() == m1.getMerchantX() + UNIT_SIZE || p1.getPlayerX() == m1.getMerchantX() - UNIT_SIZE)&&(p1.getPlayerY() == m1.getMerchantY()))||((p1.getPlayerY() == m1.getMerchantY() - UNIT_SIZE || p1.getPlayerY() == m1.getMerchantY()+UNIT_SIZE)&&(p1.getPlayerX() == m1.getMerchantX()))){
-					new MerchantFrame();
+					//new MerchantFrame();
 				}
 				break;
             }
-			updateStats();
+			//updateStats();
 			repaint();
 
 		}
@@ -262,9 +273,3 @@ public class GamePanel extends JPanel implements ActionListener {
 	}
 	}
 
-
-
-
-
-
-}   

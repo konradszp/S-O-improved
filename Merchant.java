@@ -10,6 +10,7 @@ public class Merchant extends GamePanel{
     Merchant(){
         merchantX = random.nextInt((int)(SCREEN_WIDTH/UNIT_SIZE))*UNIT_SIZE;
 		merchantY = random.nextInt((int)(SCREEN_HEIGHT/UNIT_SIZE))*UNIT_SIZE;
+        merchantGold = 5;
     }
 
     public int getMerchantX(){
