@@ -40,12 +40,10 @@ public class GamePanel extends JPanel implements ActionListener {
 
     public void newPlayer(){
         p1 = new Player();
-        repaint();
     }
 
     public void newMerchant(){
         m1 = new Merchant();
-        repaint();
     }
 
     public void newEnemies(){
